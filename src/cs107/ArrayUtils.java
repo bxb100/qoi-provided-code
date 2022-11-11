@@ -183,13 +183,12 @@ public final class ArrayUtils {
 
 		byte[] concat = new byte[byteLength];
 
-		int dest = 0;
-		for (byte[] bytes : tabs) {
-			assert bytes != null;
-
-			System.arraycopy(bytes, 0, concat, dest, bytes.length);
-			dest += bytes.length;
+		int l = 0;
+		for (byte[] tab : tabs) {
+			System.arraycopy(tab, 0, concat, l, tab.length);
+			l += tab.length;
 		}
+
 		return concat;
 	}
 
